@@ -2,7 +2,7 @@ name: EC2 Auto Deploy
 
 on:
   push:
-    branches: [ "main" ]  # main 브랜치에 push 될 때 실행
+    branches: [ "master" ]  # main 브랜치에 push 될 때 실행
 
 jobs:
   deploy:
