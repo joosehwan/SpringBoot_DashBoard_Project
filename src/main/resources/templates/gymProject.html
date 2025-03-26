@@ -1,0 +1,687 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>🏋️‍♀️ 프로젝트명: 짐투게더 (GymTogether)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c275152-f1b0-806e-8621-e0a66e17a99a" class="page sans"><header><h1 class="page-title">🏋️‍♀️ 프로젝트명: <strong>짐투게더 (GymTogether)</strong></h1><p class="page-description"></p></header><div class="page-body"><h3 id="1c275152-f1b0-802c-a7c9-f41fd1480715" class="">🧩 <strong>짐투게더 (GymTogether) 기능 정리</strong></h3><p id="1c275152-f1b0-80dd-8c81-eaccd2e7b673" class="">
+</p><blockquote id="1c275152-f1b0-80cb-87be-f044fa4af375" class="">헬스를 좋아하는 사람들이 루틴과 후기를 공유하며 함께 성장하는 커뮤니티 플랫폼</blockquote><p id="1c275152-f1b0-80ae-acc3-ca6517cfca80" class="">
+</p><table id="1c275152-f1b0-8009-8b33-d4b285b41534" class="simple-table"><tbody><tr id="1c275152-f1b0-8074-a684-c07603f770e1"><td id="\sAF" class=""><strong>기능 영역</strong></td><td id="HRB`" class=""><strong>주요 기능 설명</strong></td></tr><tr id="1c275152-f1b0-80cd-a728-d24207523c3c"><td id="\sAF" class="">🏠 커뮤니티 게시판</td><td id="HRB`" class="">운동 루틴, 후기, 팁 등을 자유롭게 공유할 수 있는 게시판글에 좋아요, 조회수 포함</td></tr><tr id="1c275152-f1b0-808e-9050-cf73cb0b2b4e"><td id="\sAF" class="">✍️ 루틴 공유</td><td id="HRB`" class="">사용자 맞춤 운동 루틴 입력 후 공개 게시 가능다른 사용자가 루틴을 복사하여 활용 가능</td></tr><tr id="1c275152-f1b0-80b0-9e3b-e98e6df6dacf"><td id="\sAF" class="">💬 댓글 기능</td><td id="HRB`" class="">루틴 게시글에 댓글/대댓글 작성피드백 및 소통 기능 제공</td></tr><tr id="1c275152-f1b0-8020-9653-ec16a2ce347e"><td id="\sAF" class="">🔍 태그 &amp; 검색</td><td id="HRB`" class="">#가슴운동, #다이어트 등 해시태그 기반 필터링제목/내용/태그 키워드 검색 가능</td></tr><tr id="1c275152-f1b0-8058-abd8-d54f801bb3ff"><td id="\sAF" class="">👤 사용자 피드</td><td id="HRB`" class="">특정 사용자의 프로필 보기작성 글, 좋아요 누른 글, 프로필 정보 열람 가능</td></tr><tr id="1c275152-f1b0-8032-99a4-f287e2b89cea"><td id="\sAF" class="">📈 인기 루틴</td><td id="HRB`" class="">좋아요 수를 기반으로 한 루틴 랭킹 기능기간별(주간/월간) 인기글도 제공 가능</td></tr></tbody></table><p id="1c275152-f1b0-80e4-856c-f3762a8a517d" class="">
+</p><hr id="1c275152-f1b0-8000-a108-dbcd6d8b91e9"/><h2 id="1c275152-f1b0-80a9-bd52-e9b4c979f3dd" class="">✅ 주요 목표</h2><ul id="1c275152-f1b0-808e-97c6-ff70bb28f3ec" class="bulleted-list"><li style="list-style-type:disc"><strong>운동 루틴 공유 게시판</strong> 중심의 커뮤니티</li></ul><ul id="1c275152-f1b0-80b4-b27c-e384fdee1a8b" class="bulleted-list"><li style="list-style-type:disc">사용자들이 <strong>루틴을 등록, 공유, 피드백</strong> 주고받는 공간</li></ul><ul id="1c275152-f1b0-8003-9e94-e94a341bf17b" class="bulleted-list"><li style="list-style-type:disc">추후에 개인 기록 기능도 붙일 수 있도록 확장성 고려</li></ul><hr id="1c275152-f1b0-804b-bc39-e0c7209266e4"/><h2 id="1c275152-f1b0-80c4-ba22-ccaada1ca423" class="">🧩 핵심 기능 구성</h2><h3 id="1c275152-f1b0-806f-9db7-fbbeec534825" class="">1. <strong>회원 인증</strong></h3><ul id="1c275152-f1b0-8012-93d4-e521febfe15d" class="bulleted-list"><li style="list-style-type:disc">회원가입 / 로그인 / 로그아웃</li></ul><ul id="1c275152-f1b0-800a-95c8-dcc8a35af3ec" class="bulleted-list"><li style="list-style-type:disc">닉네임, 프로필 이미지, 자기소개</li></ul><ul id="1c275152-f1b0-80a2-9b47-fcc66d22f49b" class="bulleted-list"><li style="list-style-type:disc">Spring Security (세션 기반) 사용</li></ul><hr id="1c275152-f1b0-80ac-941f-f6244892aa29"/><h3 id="1c275152-f1b0-806d-866b-f17ee2f892a3" class="">2. <strong>루틴 공유 게시판</strong></h3><ul id="1c275152-f1b0-8082-aa83-e838ec2b8ddf" class="bulleted-list"><li style="list-style-type:disc">제목, 설명, 운동 루틴 (세트/반복/무게 등)</li></ul><ul id="1c275152-f1b0-806c-b0fe-d71e179178dd" class="bulleted-list"><li style="list-style-type:disc">운동 부위 분류 (ex: 가슴/하체/전신 등)</li></ul><ul id="1c275152-f1b0-80c2-a84c-c3be9532ce51" class="bulleted-list"><li style="list-style-type:disc">해시태그 등록 (#벤치프레스 #다이어트 등)</li></ul><ul id="1c275152-f1b0-801e-b1c8-d69146a3e653" class="bulleted-list"><li style="list-style-type:disc">이미지 첨부 (운동 인증샷, 자세 설명 등)</li></ul><hr id="1c275152-f1b0-80f8-b357-f473d3b55ccd"/><h3 id="1c275152-f1b0-80d8-a018-c22c239d95b8" class="">3. <strong>좋아요 &amp; 댓글</strong></h3><ul id="1c275152-f1b0-803a-8af9-cf1a5f44216b" class="bulleted-list"><li style="list-style-type:disc">글에 좋아요 누르기 (인기 루틴 순위 반영)</li></ul><ul id="1c275152-f1b0-80ee-9a3d-f06a3ea44d30" class="bulleted-list"><li style="list-style-type:disc">댓글/대댓글 기능</li></ul><ul id="1c275152-f1b0-8002-b3d4-d545aabbc2b1" class="bulleted-list"><li style="list-style-type:disc">댓글 작성/수정/삭제</li></ul><hr id="1c275152-f1b0-8022-be48-fcb27968bffe"/><h3 id="1c275152-f1b0-805e-9691-e2756b07af5d" class="">4. <strong>검색 &amp; 필터</strong></h3><ul id="1c275152-f1b0-80bc-9e5e-f5ca8da8f023" class="bulleted-list"><li style="list-style-type:disc">키워드 검색 (제목 + 내용)</li></ul><ul id="1c275152-f1b0-800f-9eb5-c25de9244606" class="bulleted-list"><li style="list-style-type:disc">해시태그 기반 필터링</li></ul><ul id="1c275152-f1b0-803f-92ad-ca867e8d2729" class="bulleted-list"><li style="list-style-type:disc">부위별/인기순 정렬</li></ul><hr id="1c275152-f1b0-8039-bfc5-d3213d35c36b"/><h3 id="1c275152-f1b0-802d-8fa4-e2f57b4f7ec2" class="">5. <strong>마이페이지</strong></h3><ul id="1c275152-f1b0-80d9-a9fe-cdb1ded87c37" class="bulleted-list"><li style="list-style-type:disc">내가 쓴 루틴 글 목록</li></ul><ul id="1c275152-f1b0-808a-9ffd-ece6dc6cae7c" class="bulleted-list"><li style="list-style-type:disc">내가 좋아요 누른 글</li></ul><ul id="1c275152-f1b0-8096-a54f-c3d40bd99e82" class="bulleted-list"><li style="list-style-type:disc">프로필 편집 (닉네임, 소개글, 이미지)</li></ul><hr id="1c275152-f1b0-8074-83bd-cf1def5b7412"/><h2 id="1c275152-f1b0-806c-8f00-d52a430c3999" class="">📦 데이터베이스 테이블 예시</h2><table id="1c275152-f1b0-809a-8161-e235c66faf23" class="simple-table"><tbody><tr id="1c275152-f1b0-8043-9266-d86f449156c6"><td id="I{w[" class="">테이블</td><td id="Hcmb" class="">주요 컬럼</td></tr><tr id="1c275152-f1b0-805d-a7ce-d469726fcbfb"><td id="I{w[" class=""><code>user</code></td><td id="Hcmb" class="">id, email, password, nickname, profile_img, bio</td></tr><tr id="1c275152-f1b0-80fc-a20e-d9358a094b50"><td id="I{w[" class=""><code>post</code></td><td id="Hcmb" class="">id, user_id, title, content, created_at, view_count</td></tr><tr id="1c275152-f1b0-805e-b1af-eb7c61d01f13"><td id="I{w[" class=""><code>routine_detail</code></td><td id="Hcmb" class="">id, post_id, workout_name, sets, reps, weight</td></tr><tr id="1c275152-f1b0-8008-b479-f3cef04ce754"><td id="I{w[" class=""><code>comment</code></td><td id="Hcmb" class="">id, post_id, user_id, content, created_at</td></tr><tr id="1c275152-f1b0-8096-ac98-ebc5636980b8"><td id="I{w[" class=""><code>like</code></td><td id="Hcmb" class="">user_id, post_id</td></tr><tr id="1c275152-f1b0-807c-b672-e3d54d90dfc1"><td id="I{w[" class=""><code>tag</code></td><td id="Hcmb" class="">id, name</td></tr><tr id="1c275152-f1b0-803f-99e8-d3bd83ad93da"><td id="I{w[" class=""><code>post_tag</code></td><td id="Hcmb" class="">post_id, tag_id</td></tr></tbody></table><hr id="1c275152-f1b0-807a-a65b-dd16ff648885"/><h2 id="1c275152-f1b0-806e-97cc-f6723ef53ae2" class="">🛠️ 기술 스택</h2><table id="1c275152-f1b0-8050-94ce-c22d9b92dace" class="simple-table"><tbody><tr id="1c275152-f1b0-80c7-a6c1-fab301a8dce0"><td id="bq}_" class="">영역</td><td id="JMeJ" class="">기술</td></tr><tr id="1c275152-f1b0-8048-ae20-de031afd328b"><td id="bq}_" class="">백엔드</td><td id="JMeJ" class="">Spring Boot, MyBatis</td></tr><tr id="1c275152-f1b0-8040-8fa2-ed78a9a1dcd2"><td id="bq}_" class="">인증</td><td id="JMeJ" class="">Spring Security (세션)</td></tr><tr id="1c275152-f1b0-801d-8114-c0b57159b642"><td id="bq}_" class="">템플릿</td><td id="JMeJ" class="">Thymeleaf (SSR)</td></tr><tr id="1c275152-f1b0-80c6-a76c-e7eb3aa74e43"><td id="bq}_" class="">DBMS</td><td id="JMeJ" class="">MySQL</td></tr><tr id="1c275152-f1b0-80ed-8265-eb8dfd9ea5cd"><td id="bq}_" class="">배포</td><td id="JMeJ" class="">AWS EC2 (Ubuntu) + Docker</td></tr><tr id="1c275152-f1b0-8022-818a-e2b0eb65cecc"><td id="bq}_" class="">형상관리</td><td id="JMeJ" class="">Git + GitHub</td></tr><tr id="1c275152-f1b0-80d6-a6af-f8da0f4c8f51"><td id="bq}_" class="">CI/CD</td><td id="JMeJ" class="">GitHub Actions (선택)</td></tr></tbody></table><hr id="1c275152-f1b0-808e-921b-dedf1add2b71"/><h2 id="1c275152-f1b0-80ae-9aec-c0ae04e27753" class="">🧭 화면 흐름 요약</h2><ol type="1" id="1c275152-f1b0-80e1-b6d4-fc24662da18c" class="numbered-list" start="1"><li><strong>홈 페이지</strong><ul id="1c275152-f1b0-804c-8ff9-d234722e2725" class="bulleted-list"><li style="list-style-type:disc">인기 루틴 / 최신 루틴 / 오늘의 추천 루틴</li></ul></li></ol><ol type="1" id="1c275152-f1b0-80e0-80cb-ddc33bb17caf" class="numbered-list" start="2"><li><strong>로그인 / 회원가입</strong><ul id="1c275152-f1b0-808a-a3f7-e242a7b2613c" class="bulleted-list"><li style="list-style-type:disc">기본 인증 + 프로필 등록</li></ul></li></ol><ol type="1" id="1c275152-f1b0-80fc-801e-ffc4805791bf" class="numbered-list" start="3"><li><strong>루틴 목록 페이지</strong><ul id="1c275152-f1b0-80a4-91e5-e666f73fb1d3" class="bulleted-list"><li style="list-style-type:disc">글 목록 + 태그 필터 + 검색 + 정렬</li></ul></li></ol><ol type="1" id="1c275152-f1b0-8068-b584-dd18ab32ca9c" class="numbered-list" start="4"><li><strong>루틴 상세 페이지</strong><ul id="1c275152-f1b0-80b7-a26a-e771ff4f32ef" class="bulleted-list"><li style="list-style-type:disc">운동 구성 보기 + 이미지 + 댓글 + 좋아요</li></ul></li></ol><ol type="1" id="1c275152-f1b0-800e-9111-f67950f1680c" class="numbered-list" start="5"><li><strong>루틴 작성 페이지</strong><ul id="1c275152-f1b0-8098-a938-c647e34084bd" class="bulleted-list"><li style="list-style-type:disc">루틴 이름 + 운동 항목(세트/반복/무게) + 이미지 + 해시태그</li></ul></li></ol><ol type="1" id="1c275152-f1b0-80a8-8058-f05ae24d7a5d" class="numbered-list" start="6"><li><strong>마이페이지</strong><ul id="1c275152-f1b0-8089-9cb8-ca19d2a1473b" class="bulleted-list"><li style="list-style-type:disc">작성한 루틴, 좋아요, 프로필 수정</li></ul></li></ol><hr id="1c275152-f1b0-808d-9d64-dad13a63e350"/><h2 id="1c275152-f1b0-805f-9d60-c0f649183183" class="">📌 개발 순서 추천</h2><ol type="1" id="1c275152-f1b0-8076-a7af-e9768d6cfae2" class="numbered-list" start="1"><li>기본 프로젝트 셋업 (Spring Boot, DB 연결)</li></ol><ol type="1" id="1c275152-f1b0-80d9-be36-c84695444a5b" class="numbered-list" start="2"><li>회원가입 / 로그인 / 로그아웃 기능</li></ol><ol type="1" id="1c275152-f1b0-8018-8f8a-ce3311c9a912" class="numbered-list" start="3"><li>게시글 작성/목록/상세 조회 기능</li></ol><ol type="1" id="1c275152-f1b0-80f9-ac52-cf954afca2bf" class="numbered-list" start="4"><li>운동 루틴 등록 (여러 운동 항목 포함)</li></ol><ol type="1" id="1c275152-f1b0-8023-86e1-c91946781db0" class="numbered-list" start="5"><li>댓글 + 좋아요 기능</li></ol><ol type="1" id="1c275152-f1b0-803c-ae3d-e5b35b0785bc" class="numbered-list" start="6"><li>태그 &amp; 검색 필터</li></ol><ol type="1" id="1c275152-f1b0-80f7-8cd0-d98650248b68" class="numbered-list" start="7"><li>마이페이지 구현</li></ol><ol type="1" id="1c275152-f1b0-80d6-81e0-e678163eec91" class="numbered-list" start="8"><li>배포 (Docker + EC2)</li></ol><hr id="1c275152-f1b0-807b-91a9-c0b16c3d355b"/><h2 id="1c275152-f1b0-80a6-83c1-f13b1e4e7917" class="">💡 확장 아이디어 (선택사항)</h2><ul id="1c275152-f1b0-8019-ac2a-fcb313b07858" class="bulleted-list"><li style="list-style-type:disc">루틴 복사 기능 (다른 사람 루틴을 내 기록으로 저장)</li></ul><ul id="1c275152-f1b0-803f-b3a5-f58424763681" class="bulleted-list"><li style="list-style-type:disc">댓글 알림 기능</li></ul><ul id="1c275152-f1b0-800f-9301-f23374dd0454" class="bulleted-list"><li style="list-style-type:disc">운동 수행 인증 기능 (인증샷 업로드 + 완료 체크)</li></ul><ul id="1c275152-f1b0-800e-92de-d7e3bc9123c0" class="bulleted-list"><li style="list-style-type:disc">유저간 팔로우 시스템</li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
