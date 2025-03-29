@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>GymTogether 로그인</title>
+  <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+<div class="container">
+  <div class="logo">🏋️ GymTogether</div>
+
+  <form>
+    <div class="input-group">
+      <input type="text" placeholder="아이디 또는 이메일">
+    </div>
+    <div class="input-group">
+      <input type="password" placeholder="비밀번호">
+    </div>
+
+    <div class="checkbox-row">
+      <label><input type="checkbox"> 아이디 저장</label>
+      <div class="link-row">
+        <a href="#">아이디 찾기</a> |
+        <a href="#">비밀번호 재설정</a>
+      </div>
+    </div>
+
+    <button class="login-btn" type="submit">로그인</button>
+  </form>
+
+  <div class="social-btns">
+    <button class="kakao">
+      카카오로 로그인
+    </button>
+    <button class="google">
+      Google로 로그인
+    </button>
+    <button class="naver">
+      네이버로 로그인
+    </button>
+  </div>
+
+  <div class="signup-link">
+    아직 회원이 아니신가요? <a href="">회원가입</a>
+  </div>
+
+  <a th:href="@{/guest}" class="guest-btn">로그인 하지 않고 사용하기</a>
+
+
+
+</div>
+</body>
+</html>
